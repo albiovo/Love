@@ -21,31 +21,62 @@ A React + TypeScript + Tailwind CSS internal R&D web app for mapping eyewear cas
 - Vite
 - Browser `localStorage` (no backend)
 
-## Setup
+## Run the app locally
 
-1. Install dependencies:
+### 1) Prerequisites
 
-   ```bash
-   npm install
-   ```
+- Node.js 20+ (recommended: latest LTS)
+- npm 10+
 
-2. Start development server:
+### 2) Install dependencies
 
-   ```bash
-   npm run dev
-   ```
+```bash
+npm install
+```
 
-3. Build for production:
+### 3) Start dev server
 
-   ```bash
-   npm run build
-   ```
+```bash
+npm run dev
+```
 
-4. Preview production build:
+Then open:
 
-   ```bash
-   npm run preview
-   ```
+- http://localhost:5173
+
+If you need LAN/device access:
+
+```bash
+npm run dev:host
+```
+
+### 4) Build for production
+
+```bash
+npm run build
+```
+
+### 5) Preview production build
+
+```bash
+npm run preview
+```
+
+## If `npm install` fails with 403
+
+This usually means your environment is using a blocked npm proxy or private registry policy.
+
+Try:
+
+```bash
+npm config set registry https://registry.npmjs.org/
+npm config delete proxy
+npm config delete https-proxy
+npm cache clean --force
+npm install
+```
+
+A project `.npmrc` is included to prefer the public npm registry.
 
 ## Seed Data Included
 
